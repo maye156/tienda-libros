@@ -1,6 +1,5 @@
 
 export function Index (){
-    return(
+    return (
     <h1>Pagina Home</h1>
-    )
-}
+)}

@@ -1,5 +1,6 @@
+
 export function Vista(){
-    return(
-        <h2>Pagina Vista </h2>
+    return (
+       <h2> Pagina Vista</h2>
     )
 }

@@ -1,16 +1,20 @@
-import { Routes,Route,BrowserRouter} from "react-router-dom";
+
+import {Routes,Route,BrowserRouter} from "react-router-dom";
 import { Index } from "./pages";
-import { Crear } from "./pages/crear";
-import {Vista} from "./pages/vista";
+import { Create } from "./pages/crate";
+import { Vista } from "./pages/vista";
+
 function App() {
   return (
     <BrowserRouter>
-     <Routes>
+    <Routes>
       <Route path="/" element={<Index/>}/>
-      <Route path="crear" element={<Crear/>}/>
+      <Route path="crate" element={<Create/>}/>
       <Route path="vista/:libroId" element={<Vista/>}/>
-     </Routes>
-     </BrowserRouter>
+
+    </Routes>
+    </BrowserRouter>
+
   );
 }
 
