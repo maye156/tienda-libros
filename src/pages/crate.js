@@ -45,7 +45,7 @@ export function Create() {
         read.readAsDataURL(file);
         read.onloadend = function () {
             //console.log("resultado", read.result);
-            setPortada(read.result);
+            setPortada(read.result.toString());
             console.log(portada);
 
         };
@@ -81,7 +81,7 @@ export function Create() {
             </div>
             <div>
                 <label>Portada:</label>
-                <input type="file" onChange={handleChangefile} name="portada" />
+                <input type="file" onChange={handleChange} name="portada" />
 
                 <div>
                 {!!portada ? <img alt="portada" width="200" src={portada} /> : <img alt="portada" width="200" src="https://th.bing.com/th/id/R.0e5b98614c5d263813e38232e4219307?rik=X06hlUCgMGZ3Qg&pid=ImgRaw&r=0" />}                      
