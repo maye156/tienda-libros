@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Index/>}/>
-      <Route path="crate" element={<Create/>}/>
+      <Route path="crear" element={<Create/>}/>
       <Route path="vista/:libroId" element={<Vista/>}/>
 
     </Routes>
