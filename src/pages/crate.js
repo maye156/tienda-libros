@@ -37,29 +37,34 @@ export function Create() {
         }
     }
 
-function handleChangefile (e){
-    const element = e.target;
-    var file = element.files[0];
-   var read = new FileReader ();
+    function handleChangefile(e) {
+        const element = e.target;
+        var file = element.files[0];
+        var read = new FileReader();
 
-    read.onloadend = function () {
-       //console.log("resultado",read.result);}
-        setPortada (read.result.toString())};
-    read.readAsDataURL(file);
-}
-function handleSubmit (e){
-  e.preventDeafault();
-  const libro = {
-    id:crypto.randomUUID(),
-    titulo:titulo,
-    autor,
-    portada,
-    intro,
-    comt,
-    completado
-  }; 
-  //Crear un nuevo libro
-}
+        read.readAsDataURL(file);
+        read.onloadend = function () {
+            //console.log("resultado", read.result);
+            setPortada(read.result);
+            console.log(portada);
+
+        };
+
+    }
+
+    function handleSubmit (e){
+      e.preventDeafault();
+      const libro = {
+        id:crypto.randomUUID(),
+        titulo:titulo,
+        autor,
+        portada,
+        intro,
+        comt,
+        completado
+      }; 
+      //Crear un nuevo libro
+    }
 
     return (
 
@@ -76,11 +81,12 @@ function handleSubmit (e){
             </div>
             <div>
                 <label>Portada:</label>
-                <input type="file" onChange={handleChangefile} value={portada} name="portada"/>
-               
+                <input type="file" onChange={handleChangefile} name="portada" />
+
                 <div>
-                {!!portada?<img alt="portada" width="200" src={portada}/>:""}
-                </div>
+                {!!portada ? <img alt="portada" width="200" src={portada} /> : <img alt="portada" width="200" src="https://th.bing.com/th/id/R.0e5b98614c5d263813e38232e4219307?rik=X06hlUCgMGZ3Qg&pid=ImgRaw&r=0" />}                      
+                                        
+                                         </div>
             </div>
             <div>
                 <label>Intro:</label>
@@ -100,3 +106,6 @@ function handleSubmit (e){
         </form>
     )
 }
+
+
+
