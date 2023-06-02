@@ -54,7 +54,7 @@ export function Create() {
 
     function handleSubmit (e){
       e.preventDeafault();
-      const libro = {
+      /*const libro = {
         id:crypto.randomUUID(),
         titulo:titulo,
         autor,
@@ -63,6 +63,7 @@ export function Create() {
         comt,
         completado
       }; 
+*/
       //Crear un nuevo libro
     }
 
