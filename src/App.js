@@ -1,3 +1,4 @@
+
 import {Routes,Route,BrowserRouter} from "react-router-dom";
 import { Index } from "./pages";
 import { Create } from "./pages/crate";
@@ -13,6 +14,7 @@ function App() {
 
     </Routes>
     </BrowserRouter>
+
   );
 }
 
