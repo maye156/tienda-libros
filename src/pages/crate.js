@@ -1,5 +1,7 @@
 import { useState } from "react";
 import '../styles/styles.css';
+import { useAppcontext } from "../store/store";
+import { Link } from "react-router-dom";
 
 export function Create() {
 
@@ -9,6 +11,7 @@ export function Create() {
     const [intro, setIntro] = useState("");
     const [comt, setComt] = useState("");
     const [completado, setCompletado] = useState(false);
+    const store=useAppcontext();
 
     function handleChange(e) {
         const n = e.target.name;
@@ -64,11 +67,16 @@ export function Create() {
             comt,
             completado
         };
-        //Crear un nuevo libro
+       
+        store.crearItems(libro);
+        console.log(libro.id);
+        console.log(titulo);
+
     }
 
     return (
         <div className="container">
+            <Link to="/">Home</Link>
             <form onSubmit={handleSubmit}>
                 <div className="row g-2" >
                     <label>Titulo:</label>
@@ -108,6 +116,9 @@ export function Create() {
                     <label className="form-check-label" for="flexSwitchCheckDefault">  Completado   </label> 
                     <input type="checkbox" onChange={handleChange} value={completado} name="completado" className=" form-check-input" id="flexSwitchCheckDefault" />
                     {completado}
+                </div>
+                <div>
+                    <input type="submit"  value="Registrar libro"/>
                 </div>
                 </div>
             </form>
