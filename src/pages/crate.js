@@ -1,7 +1,7 @@
 import { useState } from "react";
 import '../styles/styles.css';
 import { useAppcontext } from "../store/store";
-import { Link } from "react-router-dom";
+import Layout from "../components/Layout";
 
 export function Create() {
 
@@ -71,14 +71,13 @@ export function Create() {
         };
 
         store.crearItems(libro);
-        console.log(libro.id);
-        console.log(titulo);
-
+       
     }
 
     return (
         <div className="container">
-            <Link to="/">Home</Link>
+        <Layout>
+            
             <form onSubmit={handleSubmit}>
                 <div className="row g-2" >
                     <label>Titulo:</label>
@@ -118,6 +117,7 @@ export function Create() {
                 {titulo}    {autor} {intro}{comt} {completado}
                 <input type="submit" value="Registrar libro" />
             </form>
+            </Layout>
         </div>
     )
 }
