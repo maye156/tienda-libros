@@ -17,22 +17,22 @@ export function Store({children}){
         const temporal=[... libro];
         temporal.push(item);
         setLibro(temporal);
-        console.log(item.titulo);
+        
                
     }
 
     function obtenerItem(id){
 
         const item=libro.find((item)=>item.id===id);
-
-        return(item);
+        console.log("id q llega"+id+"id del arreglo "+libro[0].id  );
+        return item;
     }
 
     function actualizarItem(item){
 
         const index=libro.findIndex((i)=>i.id===item.id);
 
-        const temporal=[... libro];
+        const temporal=[...libro];
         temporal[index]={...item};
 
 
