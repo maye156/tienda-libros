@@ -16,7 +16,8 @@ export function Store({children}){
 
         const temporal=[... libro];
         temporal.push(item);
-        setLibro(temporal)
+        setLibro(temporal);
+        console.log(item.titulo);
                
     }
 

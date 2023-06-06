@@ -11,7 +11,7 @@ export function Create() {
     const [intro, setIntro] = useState("");
     const [comt, setComt] = useState("");
     const [completado, setCompletado] = useState(false);
-    const store=useAppcontext();
+    const store = useAppcontext();
 
     function handleChange(e) {
         const n = e.target.name;
@@ -57,7 +57,9 @@ export function Create() {
     }
 
     function handleSubmit(e) {
-        e.preventDeafault();
+        e.preventDefault();
+        console.log("entro");
+
         const libro = {
             id: crypto.randomUUID(),
             titulo: titulo,
@@ -67,7 +69,7 @@ export function Create() {
             comt,
             completado
         };
-       
+
         store.crearItems(libro);
         console.log(libro.id);
         console.log(titulo);
@@ -81,46 +83,40 @@ export function Create() {
                 <div className="row g-2" >
                     <label>Titulo:</label>
                     <input type="text" onChange={handleChange} value={titulo} name="titulo" />
-                    {titulo}
+
                 </div>
                 <div className="row g-2" >
                     <label>Autor:</label>
                     <input type="text" onChange={handleChange} value={autor} name="autor" />
-                    {autor}
+
                 </div>
-                <div className= "row g-2" >
+                <div className="row g-2" >
                     <div>
                         <label class>Portada:</label>
                         <input type="file" onChange={handleChange} name="portada" className="form-control" id="inputGroupFile01" />
                     </div>
 
-
-                    <div  id="img">
-                        {!!portada ? <img alt="portada" width="200" src={portada} /> : <img alt="portada" width="200" src="https://th.bing.com/th/id/R.0e5b98614c5d263813e38232e4219307?rik=X06hlUCgMGZ3Qg&pid=ImgRaw&r=0" />}
-
-                    </div>
                 </div>
 
                 <div className="row g-2">
                     <label>Intro:</label>
                     <input type="text" onChange={handleChange} value={intro} name="intro" />
-                    {intro}
+
                 </div>
                 <div className="row g-2">
                     <label>Comentario:</label>
                     <input type="text" onChange={handleChange} value={comt} name="comt" />
-                    {comt}
+
                 </div>
                 <div className="row g-2">
-                <div className="form-check form-switch">
-                    <label className="form-check-label" for="flexSwitchCheckDefault">  Completado   </label> 
-                    <input type="checkbox" onChange={handleChange} value={completado} name="completado" className=" form-check-input" id="flexSwitchCheckDefault" />
-                    {completado}
+                    <div className="form-check form-switch">
+                        <label className="form-check-label" for="flexSwitchCheckDefault">  Completado   </label>
+                        <input type="checkbox" onChange={handleChange} value={completado} name="completado" className=" form-check-input" id="flexSwitchCheckDefault" />
+                    </div>
+
                 </div>
-                <div>
-                    <input type="submit"  value="Registrar libro"/>
-                </div>
-                </div>
+                {titulo}    {autor} {intro}{comt} {completado}
+                <input type="submit" value="Registrar libro" />
             </form>
         </div>
     )
