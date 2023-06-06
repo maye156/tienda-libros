@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: block;
+   	border-radius: 10px;
+	overflow: hidden;
+	text-align: center;
+	transition: all 0.25s;
+	background-color: rgb(245, 245, 245);
+    position: relative;
+    font-size:medium;
+    font-family: 'calibri';
+    margin: auto;
+    padding: 30px;
+  
+}
+
+
+#img{
+    height: 50%;
+    width: 50%;
+    justify-content: center;
+    margin: center;
+    align-items: center;
+    display:flex;
+    
+}
