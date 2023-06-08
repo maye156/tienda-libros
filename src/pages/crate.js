@@ -77,8 +77,7 @@ export function Create() {
     return (
         <div className="container">
         <Layout>
-            
-            <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                 <div className="row g-2" >
                     <label>Titulo:</label>
                     <input type="text" onChange={handleChange} value={titulo} name="titulo" />
