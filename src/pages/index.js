@@ -1,7 +1,5 @@
+import { Link } from "react-router-dom";
 import { useAppcontext } from "../store/store"
-import Layout from "../components/Layout";
-import { Vista } from "./vista";
-import { Book } from "../components/Book";
 
 
 
@@ -10,12 +8,11 @@ export function Index (){
     
     return (
         
-        <Layout>
-         
-            {store.libro.map( (item)=>
-             (
-                <Book key={item.id} item={item}/>
-             )
-        )}</Layout>
+        <div>
+            <Link to="/crear">Crear Libro</Link>
+            {store.libro.map(
+            
+            (item)=>(<div>{item.titulo}</div>)
+        )}</div>
     
 )}
